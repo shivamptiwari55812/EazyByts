@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #181a1b;
+      color: #f5f5f5;
+      min-height: 100vh;
+    }
+    .navbar {
+      background: #23272a;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .navbar h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #7289da;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #a3bffa;
+    }
+    .dashboard-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #23272a;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    }
+    .dashboard-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .dashboard-header h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    .event-list {
+      margin-bottom: 2rem;
+    }
+    .event-item {
+      background: #2c2f33;
+      padding: 1rem;
+      border-radius: 7px;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .event-item span {
+      font-size: 1.1rem;
+    }
+    .event-actions button {
+      background: #7289da;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .event-actions button:hover {
+      background: #5b6eae;
+    }
+    .add-event-form input,
+    .add-event-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 6px;
+      background: #181a1b;
+      color: #f5f5f5;
+      font-size: 1rem;
+    }
+    .add-event-form button {
+      background: #43b581;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+    .add-event-form button:hover {
+      background: #36996c;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h2>Event Manager</h2>
+    <div class="nav-links">
+      <a href="#">Dashboard</a>
+      <a href="#">AllAtOnce</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h3>Your Events</h3>
+    </div>
+    <div class="event-list" id="eventList">
+      <!-- Example events -->
+      <div class="event-item">
+        <span>Annual Tech Conference - 2025-08-15</span>
+        <div class="event-actions">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      </div>
+      <div class="event-item">
+        <span>Startup Meetup - 2025-09-10</span>
+        <div class="event-actions">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      </div>
+    </div>
+    <form class="add-event-form">
+      <h3>Add New Event</h3>
+      <input type="text" placeholder="Event Name" required>
+      <input type="date" required>
+      <textarea placeholder="Event Description" rows="3"></textarea>
+      <button type="submit">Create Event</button>
+    </form>
+  </div>
+</body>
+</html>
